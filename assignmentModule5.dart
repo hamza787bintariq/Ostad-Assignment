@@ -18,13 +18,13 @@ class Student extends Person {
   String grade;
   List courseScores = [];
   Student(
-      this.studentID,
-      this.grade,
-      this.courseScores,
-      super.name,
-      super.address,
-      super.age,
-      );
+    this.studentID,
+    this.grade,
+    this.courseScores,
+    super.name,
+    super.address,
+    super.age,
+  );
   void displayRole() {
     print("Role:Student");
   }
@@ -43,12 +43,12 @@ class Teacher extends Person {
   String teacherID;
   List courseTought = [];
   Teacher(
-      this.teacherID,
-      this.courseTought,
-      super.name,
-      super.address,
-      super.age,
-      );
+    this.teacherID,
+    this.courseTought,
+    super.name,
+    super.address,
+    super.age,
+  );
   void displayRole() {
     print("Role:Teacher");
   }
