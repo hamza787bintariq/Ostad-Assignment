@@ -1,0 +1,78 @@
+abstract class Animal {
+  String _name;
+  Animal(this._name);
+  String get nameGetterMethod {
+    return _name;
+  }
+  String makeSound();
+}
+class Lion extends Animal {
+  double _maneSize;
+  Lion(this._maneSize, super.name);
+  double get getManeSize {
+    return _maneSize;
+  }
+  set setterManeSize(double setterMethodManeSize) {
+    if (setterMethodManeSize < 0) {
+      print("Wrong Value");
+    } else {
+      _maneSize = setterMethodManeSize;
+    }
+  }
+  String makeSound() {
+    return "Roar";
+  }
+}
+class Elephant extends Animal {
+  double _trunkLength;
+  Elephant(this._trunkLength, super.name);
+  double get gettrunkLength {
+    return _trunkLength;
+  }
+  set setterTrunkLength(double setterMethodtrunkLength) {
+    if (setterMethodtrunkLength < 0) {
+      print("Wrong Value");
+    } else {
+      _trunkLength = setterMethodtrunkLength;
+    }
+  }
+  String makeSound() {
+    return "Trumpet";
+  }
+}
+class Parrot extends Animal {
+  double _vocabularySize;
+  Parrot(this._vocabularySize, super.name);
+  double get getVocabularySize {
+    return _vocabularySize;
+  }
+  set setterVocabularySize(double setterMethodVocabularySize) {
+    if (setterMethodVocabularySize < 0) {
+      print("Wrong Value");
+    } else {
+      _vocabularySize = setterMethodVocabularySize;
+    }
+  }
+  String makeSound() {
+    return "squawk";
+  }
+}
+main() {
+  List<Animal> animal = [
+    Lion(5.6, "Lion"),
+    Elephant(7.2, "Elephant"),
+    Parrot(50.4, "parrot"),
+  ];
+  for (var SingleAnimal in animal) {
+    print("Name:${SingleAnimal.nameGetterMethod}");
+    if (SingleAnimal is Lion) {
+      print("ManeSize : ${SingleAnimal.getManeSize}");
+    } else if (SingleAnimal is Elephant) {
+      print("TrunkLenth : ${SingleAnimal.gettrunkLength}");
+    } else if (SingleAnimal is Parrot) {
+      print("VocabularySize : ${SingleAnimal.getVocabularySize}");
+    }//Practise
+    print("Sound : ${SingleAnimal.makeSound()}");
+    print("-----------------------------------");
+  }
+}
